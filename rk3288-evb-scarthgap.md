@@ -5,8 +5,6 @@ Build 2: `rk3288-terminal-image` (HDMI display)
 
 March 2026. Kernel: Linux 6.1 | U-Boot: 2017.09 | Distro: Poky 5.0.15
 
-Source document: `RK3288_Yocto_Build_Guide.docx` (kept in this repo).
-
 ## 1. Project overview
 
 Complete process for building two Yocto images for the Rockchip RK3288 EVB board using the Poky reference distribution on the Scarthgap (5.0) release. Every step, the reason behind each decision, all bugs encountered, and exactly how they were resolved.
@@ -158,6 +156,12 @@ NOTE: Tasks Summary: Attempted 4660 tasks of which 2968 didn't need to be rerun 
 | `rk3288-evb-rk808-linux.dtb` | Device tree blob |
 | `core-image-minimal-...tar.gz` | Root filesystem (17 MB) |
 | `modules-...tgz` | Kernel modules |
+
+What a booted minimal image looks like on RK3288 (Firefly board, later 6.18 kernel — same userland shape as the 6.1 EVB build):
+
+![Firefly RK3288 fastfetch](images/rk3288-fastfetch-screenshot.png)
+
+![RK3288 btop](images/rk3288-btop-screenshot.png)
 
 ## 4. Build 2 — rk3288-terminal-image (HDMI display)
 

@@ -98,4 +98,6 @@ sudo bmaptool copy build/tmp/deploy/images/raspberrypi4-64/core-image-minimal-ra
 
 Zero to booting `core-image-minimal` on RPi 4B took well under the time it took just to configure bblayers/local.conf by hand in 2024. The fragment model removes most copy-paste failure modes.
 
-Proof: `images/rpi4b-boot-log.jpg` shows `Poky 6.0.2 raspberrypi4-64` at a login prompt.
+Booting to a login prompt on Poky 6.0.2:
+
+![RPi 4B boot log](images/rpi4b-boot-log.jpg)

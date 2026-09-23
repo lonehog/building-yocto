@@ -4,10 +4,11 @@ This is separate from the Firefly/Rockchip EVB Scarthgap build in `rk3288-evb-sc
 
 ## Board
 
-Generic RK3288 board (not Radxa or Firefly), only a basic datasheet. Photos:
+Generic RK3288 board (not Radxa or Firefly), only a basic datasheet.
 
-- `images/rk3288-board-overview.jpg` — full board on desk, heatsink over SoC, powered with LEDs on
-- `images/rk3288-pmic-closeup.jpg` — PMIC area (ACT8846-class part), the source of trouble in the 2024 attempt
+![RK3288 generic board](images/rk3288-board-overview.jpg)
+
+![PMIC area](images/rk3288-pmic-closeup.jpg)
 
 In 2024 I dove straight into this board and got stuck, especially around the PMIC, and never got a boot. In July 2026 I went back to it after the RPi 4B warm-up (`rpi4b.md`).
 
@@ -19,14 +20,15 @@ In 2024 I dove straight into this board and got stuck, especially around the PMI
 - `rockchip-rk3288-evb-act8846` — EVB variant with ACT8846 PMIC
 - `rockchip-rk3288w-evb` — low-power RK3288W variant
 
-A generic reference-design board with an ACT8846-class PMIC is closest to the `-act8846` variant. Check your PMIC marking against `images/rk3288-pmic-closeup.jpg` before picking `MACHINE`.
+A generic reference-design board with an ACT8846-class PMIC is closest to the `-act8846` variant. Check your PMIC marking against the close-up above before picking `MACHINE`.
 
 ## Boot evidence (Firefly RK3288, Wrynose-era kernel)
 
-The monitor photos in `images/` are from a Firefly RK3288 boot of a minimal image:
+The monitor photos below are from a Firefly RK3288 boot of a minimal image: `Firefly-RK3288`, kernel `Linux 6.18.24-yocto-standard`, `rk3288 (4) @ 1.61 GHz`, `~37 MiB / 741 MiB (5%)`, rootfs `~23 MiB / 38 MiB (59%)`.
 
-- `images/rk3288-fastfetch-screenshot.png` / `images/rk3288-fastfetch-monitor.jpg` — `Firefly-RK3288`, kernel `Linux 6.18.24-yocto-standard`, `rk3288 (4) @ 1.61 GHz`, `~37 MiB / 741 MiB (5%)`, rootfs `~23 MiB / 38 MiB (59%)`
-- `images/rk3288-btop-screenshot.png` / `images/rk3288-btop-monitor.jpg` — `btop`, ARMv7 rev 1, 741 MiB total, ~37 MiB used
+![Firefly RK3288 fastfetch](images/rk3288-fastfetch-screenshot.png)
+
+![RK3288 btop](images/rk3288-btop-screenshot.png)
 
 The serial log visible at the top of `images/rk3288-fastfetch-monitor.jpg` shows `rk_iommu` deferred-probe timeouts, which did not stop the boot to a root shell.
 
